@@ -5,10 +5,17 @@
     background-color: transparent;
     border: 1px solid var(--clr-neutral-200);
     padding-block: 0.25rem;
+    width: 15rem;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   button {
     color: white;
     background-color: var(--clr-primary-400);
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
   }
 }

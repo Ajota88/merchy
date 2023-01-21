@@ -6,16 +6,18 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 
-const NavButtons = () => {
+const NavButtons = ({ handleOpen, mobile }) => {
   return (
-    <div className="nav-buttons">
-      <div className="nav-login">
+    <div className="nav-buttons" data-type={mobile}>
+      <button className="nav-login">
         <FontAwesomeIcon icon={faUser} /> <span>Login</span>
-      </div>
-      <div className="nav-cart">
+      </button>
+      <button className="nav-cart">
         <FontAwesomeIcon icon={faCartShopping} /> <span>Cart</span>
+      </button>
+      <div className="nav-hamburger">
+        <FontAwesomeIcon icon={faBars} onClick={handleOpen} />
       </div>
-      <FontAwesomeIcon icon={faBars} />
     </div>
   );
 };

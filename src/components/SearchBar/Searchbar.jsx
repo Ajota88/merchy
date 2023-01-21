@@ -5,7 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const SearchBar = () => {
   return (
     <div className="searchbar">
-      <input type="text" placeholder="search..." />
+      <input type="text" placeholder="Search..." />
       <button>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
