@@ -19,6 +19,8 @@ import ReactPortal from "./ReactPortal/ReactPortal";
 import Sort from "./Sort/Sort";
 import Stars from "./Stars/Stars";
 import Testimonials from "./Testimonials/Testimonials";
+import NavButtons from "./NavButtons/NavButtons";
+import SearchBar from "./SearchBar/SearchBar";
 
 export {
   AddToCart,
@@ -42,4 +44,6 @@ export {
   Sort,
   Stars,
   Testimonials,
+  NavButtons,
+  SearchBar,
 };

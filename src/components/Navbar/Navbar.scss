@@ -1,5 +1,20 @@
 .navbar {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+
   .logo {
-    width: 100px;
+    width: 8rem;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
   }
 }
