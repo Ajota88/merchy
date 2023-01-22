@@ -1,0 +1,9 @@
+.star {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  svg {
+    color: var(--clr-accent-500);
+  }
+}

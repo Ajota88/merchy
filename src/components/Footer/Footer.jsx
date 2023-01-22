@@ -53,10 +53,9 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
-        <div className="copyright">
-          <p> &copy; {new Date().getFullYear()}. All Rights Reserved</p>
-        </div>
+      <div></div>
+      <div className="copyright">
+        <p> &copy; {new Date().getFullYear()}. All Rights Reserved</p>
       </div>
     </footer>
   );

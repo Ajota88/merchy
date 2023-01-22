@@ -25,7 +25,6 @@
 
   .copyright {
     background-color: var(--black);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,6 +50,10 @@
       svg {
         font-size: 1.5rem;
       }
+    }
+
+    .copyright {
+      height: 2rem;
     }
   }
 }

@@ -1,0 +1,51 @@
+@use "../../index.scss" as *;
+
+.single-product {
+  padding-block: 2rem;
+  .product-center {
+    display: grid;
+    gap: 4rem;
+    margin-top: 2rem;
+
+    img {
+      object-fit: cover;
+      height: 20rem;
+      width: auto;
+    }
+
+    .content {
+      .price {
+        color: var(--clr-accent-500);
+      }
+
+      .desc {
+        line-height: 2;
+        max-width: 45em;
+      }
+
+      .info {
+        text-transform: capitalize;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 125px 1fr;
+        font-size: 1rem;
+        span {
+          font-weight: 700;
+          color: var(--clr-accent-500);
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .product-center {
+      grid-template-columns: 1fr 1fr;
+
+      img {
+        height: 27rem;
+      }
+    }
+    .price {
+      font-size: 1.25rem;
+    }
+  }
+}
