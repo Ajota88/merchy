@@ -1,17 +1,26 @@
+import { useSelector, useDispatch } from "react-redux";
+import { setGridView, setListView } from "../../features/filters/filtersSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faGrip } from "@fortawesome/free-solid-svg-icons";
 import "./Sort.scss";
 
 const Sort = () => {
-  const gridView = true;
+  const { gridView } = useSelector((state) => state.filters);
+  const dispatch = useDispatch();
 
   return (
     <div className="sort">
       <div className="btn-container">
-        <button className={`${gridView ? "active" : null}`}>
+        <button
+          className={`${gridView ? "active" : null}`}
+          onClick={() => dispatch(setGridView())}
+        >
           <FontAwesomeIcon icon={faGrip} />
         </button>
-        <button className={`${!gridView ? "active" : null}`}>
+        <button
+          className={`${!gridView ? "active" : null}`}
+          onClick={() => dispatch(setListView())}
+        >
           <FontAwesomeIcon icon={faList} />
         </button>
       </div>
