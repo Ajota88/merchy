@@ -1,0 +1,56 @@
+@use "../../index.scss" as *;
+
+.footer {
+  .container {
+    background-color: var(--clr-primary-500);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 10rem;
+      height: 3rem;
+      cursor: pointer;
+    }
+
+    a {
+      color: white;
+      text-transform: uppercase;
+
+      &:hover {
+        color: var(--clr-accent-500);
+      }
+    }
+  }
+
+  .copyright {
+    background-color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+  }
+
+  @include md-screen {
+    .container {
+      padding: 2.5rem;
+
+      .footer-nav {
+        ul {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
