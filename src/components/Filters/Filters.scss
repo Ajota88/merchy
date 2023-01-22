@@ -1,0 +1,52 @@
+.filters {
+  .container {
+    @media (min-width: 768px) {
+      position: sticky;
+      top: 1rem;
+    }
+    .form-control {
+      margin-bottom: 1.125rem;
+
+      h5 {
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        color: var(--clr-primary-500);
+      }
+
+      button {
+        display: block;
+        margin: 0.25rem 0;
+        padding: 0.25rem 0;
+        text-transform: capitalize;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        letter-spacing: var(--spacing);
+        color: var(--clr-neutral-500);
+        cursor: pointer;
+      }
+
+      .active {
+        border-color: var(--clr-accent-500);
+      }
+
+      .price {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .clear-btn {
+      background: var(--clr-primary-500);
+      color: var(--white);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--borderRadius);
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: var(--transition);
+
+      &:hover {
+        background-color: var(--clr-primary-200);
+      }
+    }
+  }
+}
