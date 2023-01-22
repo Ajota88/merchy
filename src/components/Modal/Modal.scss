@@ -64,12 +64,7 @@
 .modal-enter-done {
   opacity: 1;
   pointer-events: auto;
-  transform: skew(-14deg) translateX(0);
-
-  .modal-content,
-  .close-icon {
-    transform: skew(14deg);
-  }
+  transform: translateX(0);
 }
 .modal-exit {
   opacity: 0;
