@@ -1,10 +1,21 @@
 import { AddToCart, Stars } from "../../components";
 import { singleProduct } from "../../utils/constants";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useGetSingleProductQuery } from "../../features/api/apiSlice";
 
 import "./SingleProduct.scss";
 
 const SingleProduct = () => {
+  const { id } = useParams();
+
+  const {
+    data: product,
+    isLoading,
+    isError,
+    error,
+  } = useGetSingleProductQuery(id);
+  console.log(product);
+
   const {
     title,
     image,
