@@ -1,3 +1,8 @@
+import avatar1 from "../assets/avatar-man-with-mustages-1632966.jpg";
+import avatar2 from "../assets/basic-shape-avatar-1632968.jpg";
+import avatar3 from "../assets/geek-avatar-1632962.jpg";
+import avatar4 from "../assets/lady-avatar-1632967.jpg";
+
 export const navLinks = [
   {
     id: 1,
@@ -72,3 +77,30 @@ export const singleProduct = {
     count: 500,
   },
 };
+
+export const reviews = [
+  {
+    id: 1,
+    name: "Anton Wilson",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id scelerisque purus. In scelerisque purus sed tortor maximus, id iaculis.",
+    image: avatar1,
+  },
+  {
+    id: 2,
+    name: "Ellie Buck",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id scelerisque purus. In scelerisque purus sed tortor maximus, id iaculis.",
+    image: avatar2,
+  },
+  {
+    id: 3,
+    name: "Daisie Sawyer",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id scelerisque purus. In scelerisque purus sed tortor maximus, id iaculis.",
+    image: avatar4,
+  },
+  {
+    id: 4,
+    name: "Allan Alvarado",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id scelerisque purus. In scelerisque purus sed tortor maximus, id iaculis.",
+    image: avatar3,
+  },
+];
