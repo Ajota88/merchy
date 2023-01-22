@@ -13,7 +13,11 @@ const NavButtons = ({ handleOpen, mobile }) => {
         <FontAwesomeIcon icon={faUser} /> <span>Login</span>
       </button>
       <button className="nav-cart">
-        <FontAwesomeIcon icon={faCartShopping} /> <span>Cart</span>
+        <div className="cart-icon">
+          <FontAwesomeIcon icon={faCartShopping} />
+          <span className="cart-value">4</span>
+        </div>
+        <span>Cart</span>
       </button>
       <div className="nav-hamburger">
         <FontAwesomeIcon icon={faBars} onClick={handleOpen} />

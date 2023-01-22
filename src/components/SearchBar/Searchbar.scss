@@ -1,3 +1,5 @@
+@use "../../index.scss" as *;
+
 .searchbar {
   input {
     border-top-left-radius: var(--borderRadius);
@@ -5,7 +7,8 @@
     background-color: transparent;
     border: 1px solid var(--clr-neutral-200);
     padding-block: 0.25rem;
-    width: 15rem;
+    width: 10rem;
+    transition: var(--transition);
 
     &:focus {
       outline: none;
@@ -17,5 +20,24 @@
     background-color: var(--clr-primary-400);
     border-top-right-radius: var(--borderRadius);
     border-bottom-right-radius: var(--borderRadius);
+    border: none;
+    padding-block: 0.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      background-color: var(--clr-primary-200);
+    }
+  }
+
+  @include md-screen {
+    input {
+      width: 8rem;
+      transition: var(--transition);
+
+      &:focus {
+        width: 15rem;
+      }
+    }
   }
 }

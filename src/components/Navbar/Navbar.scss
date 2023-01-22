@@ -1,11 +1,14 @@
+@use "../../index.scss" as *;
+
 .navbar {
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
 
   .logo {
     width: 8rem;
+    cursor: pointer;
   }
 
   .nav-center {
@@ -16,5 +19,29 @@
     display: flex;
     gap: 1.5rem;
     align-items: center;
+  }
+
+  @include md-screen {
+    padding-inline: 2rem;
+    .nav-center {
+      display: block;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-transform: capitalize;
+
+        li {
+          a {
+            font-size: 1rem;
+            letter-spacing: var(--spacing);
+            padding: 0.5rem;
+            &:hover {
+              color: var(--clr-accent-200);
+            }
+          }
+        }
+      }
+    }
   }
 }
