@@ -74,6 +74,7 @@ body {
 
 p {
   max-width: 40em;
+  margin: 0;
 }
 
 h1,
@@ -130,6 +131,13 @@ img {
   width: 100%;
   display: block;
   object-fit: cover;
+}
+
+hr {
+  width: 20rem;
+  height: 1px;
+  background-color: var(--clr-accent-500);
+  border: none;
 }
 
 /* utility classes */

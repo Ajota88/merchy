@@ -1,0 +1,13 @@
+.grid-view {
+  margin-top: 5rem;
+  .container {
+    img {
+      height: 175px;
+    }
+    display: grid;
+    gap: 2rem 1.5rem;
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+}
