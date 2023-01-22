@@ -4,7 +4,7 @@ import CartColumns from "./CartColumns/CartColumns";
 import CartContent from "./CartContent/CartContent";
 import CartItems from "./CartItems/CartItems";
 import CartTotals from "./CartTotals/CartTotals";
-import Contact from "./CartItems/CartItems";
+import Contact from "./Contact/Contact";
 import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 import Filters from "./Filters/Filters";
 import Footer from "./Footer/Footer";

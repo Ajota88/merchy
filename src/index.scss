@@ -2,10 +2,10 @@
 
 :root {
   /* colors */
-  --clr-accent-500: #472b0a;
-  --clr-accent-400: #724414;
-  --clr-accent-300: #956320;
-  --clr-accent-200: #b36b2c;
+  --clr-accent-500: #f59e0b;
+  --clr-accent-400: #fbbf24;
+  --clr-accent-300: #fcd34d;
+  --clr-accent-200: #fde68a;
 
   --clr-primary-500: #0a2647;
   --clr-primary-400: #144272;
@@ -139,7 +139,7 @@ img {
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--clr-accent-500);
+  background: var(--clr-primary-500);
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -151,7 +151,7 @@ img {
 
   &:hover,
   :focus-visible {
-    background: var(--clr-accent-200);
+    background: var(--clr-primary-200);
     box-shadow: var(--shadow-3);
   }
 }
