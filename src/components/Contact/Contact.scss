@@ -1,0 +1,65 @@
+@use "../../index.scss" as *;
+
+.contact {
+  padding: 5rem 0;
+  p {
+    line-height: 2;
+    max-width: 45em;
+    color: var(--clr-primary-300);
+  }
+
+  .contact-form {
+    width: 90vw;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    .form-input,
+    .submit-btn {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--clr-primary-300);
+    }
+
+    .form-input {
+      border-right: none;
+      color: var(--clr-neutral-300);
+      border-top-left-radius: var(--borderRadius);
+      border-bottom-left-radius: var(--borderRadius);
+
+      &::placeholder {
+        color: var(--clr-primary-300);
+        text-transform: capitalize;
+      }
+    }
+
+    .submit-btn {
+      border-top-right-radius: var(--borderRadius);
+      border-bottom-right-radius: var(--borderRadius);
+      background-color: var(--clr-accent-500);
+      text-transform: capitalize;
+      letter-spacing: var(--spacing);
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--white);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  @include md-screen {
+    padding: 8rem 0;
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 8rem;
+      margin-top: 2rem;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
