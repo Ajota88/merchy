@@ -21,6 +21,7 @@ import Stars from "./Stars/Stars";
 import Testimonials from "./Testimonials/Testimonials";
 import NavButtons from "./NavButtons/NavButtons";
 import SearchBar from "./SearchBar/SearchBar";
+import Spinner from "./Spinner/Spinner";
 
 export {
   AddToCart,
@@ -46,4 +47,5 @@ export {
   Testimonials,
   NavButtons,
   SearchBar,
+  Spinner,
 };

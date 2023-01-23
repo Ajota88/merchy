@@ -2,6 +2,7 @@ import { AddToCart, Stars } from "../../components";
 import { singleProduct } from "../../utils/constants";
 import { Link, useParams } from "react-router-dom";
 import { useGetSingleProductQuery } from "../../features/api/apiSlice";
+import { Spinner } from "../../components";
 
 import "./SingleProduct.scss";
 
@@ -14,7 +15,10 @@ const SingleProduct = () => {
     isError,
     error,
   } = useGetSingleProductQuery(id);
-  console.log(product);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   const {
     title,
@@ -23,7 +27,7 @@ const SingleProduct = () => {
     description,
     category,
     rating: { rate, count },
-  } = singleProduct;
+  } = product;
 
   return (
     <div className="single-product |  section-center">
