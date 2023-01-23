@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, PrivateRoute } from "./components";
 import {
   About,
   Cart,
@@ -50,7 +50,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <Checkout />,
+        element: (
+          <PrivateRoute>
+            <Checkout />,
+          </PrivateRoute>
+        ),
       },
     ],
   },

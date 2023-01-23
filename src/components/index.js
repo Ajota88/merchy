@@ -22,6 +22,7 @@ import Testimonials from "./Testimonials/Testimonials";
 import NavButtons from "./NavButtons/NavButtons";
 import SearchBar from "./SearchBar/SearchBar";
 import Spinner from "./Spinner/Spinner";
+import PrivateRoute from "./ProtectedRoute/ProtectedRoute";
 
 export {
   AddToCart,
@@ -48,4 +49,5 @@ export {
   NavButtons,
   SearchBar,
   Spinner,
+  PrivateRoute,
 };
