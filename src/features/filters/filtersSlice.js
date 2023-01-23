@@ -24,9 +24,13 @@ export const filtersSlice = createSlice({
     setListView: (state) => {
       state.gridView = false;
     },
+    loadProducts: (state, action) => {
+      (state.filteredProducts = action.payload),
+        (state.allProducts = action.payload);
+    },
   },
 });
 
-export const { setGridView, setListView } = filtersSlice.actions;
+export const { setGridView, setListView, loadProducts } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
