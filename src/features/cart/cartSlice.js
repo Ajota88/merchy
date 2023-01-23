@@ -10,7 +10,7 @@ const getLocalStorage = () => {
 };
 
 const initialState = {
-  cart: getLocalStorage(),
+  cart: [],
   totalItems: 0,
   totalAmount: 0,
 };
@@ -80,9 +80,35 @@ export const cartSlice = createSlice({
       console.log(action.payload);
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
+
+    clearCart: (state) => {
+      return (state = { ...state, cart: [], totalAmount: 0, totalItems: 0 });
+    },
+
+    cartTotalAmount: (state) => {
+      const { totalItems, totalAmount } = state.cart.reduce(
+        (total, cartItem) => {
+          const { price, amount } = cartItem;
+          total.totalItems += amount;
+          total.totalAmount += price * amount;
+
+          return total;
+        },
+        { totalItems: 0, totalAmount: 0 }
+      );
+      console.log(totalAmount);
+      state.totalAmount = totalAmount;
+      state.totalItems = totalItems;
+    },
   },
 });
 
-export const { addToCart, toggleAmount, removeItem } = cartSlice.actions;
+export const {
+  addToCart,
+  toggleAmount,
+  removeItem,
+  clearCart,
+  cartTotalAmount,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

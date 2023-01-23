@@ -15,10 +15,21 @@
       letter-spacing: var(--spacing);
       font-weight: 400;
       cursor: pointer;
+      padding-block: 0.5rem;
+      transition: var(--transition);
+
+      &:hover {
+        background-color: var(--clr-primary-300);
+      }
     }
 
     .clear-btn {
-      background: var(--black);
+      background: var(--clr-accent-500);
+      padding-block: 0.5rem;
+      transition: var(--transition);
+      &:hover {
+        background-color: var(--clr-accent-300);
+      }
     }
   }
 }

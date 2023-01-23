@@ -1,12 +1,21 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AmountButtons } from "../index";
-import { toggleAmount, removeItem } from "../../features/cart/cartSlice";
+import {
+  toggleAmount,
+  removeItem,
+  cartTotalAmount,
+} from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import "./CartItems.scss";
 
 const CartItems = ({ id, name, price, image, amount }) => {
   const dispatch = useDispatch();
+
+  const handleItemRemove = () => {
+    dispatch(removeItem(id));
+    dispatch(cartTotalAmount());
+  };
 
   return (
     <div className="cart-item">
@@ -25,7 +34,7 @@ const CartItems = ({ id, name, price, image, amount }) => {
         decrease={() => dispatch(toggleAmount({ id, value: "dec" }))}
       />
       <h5 className="subtotal">{price * amount}</h5>
-      <button className="remove-btn" onClick={() => dispatch(removeItem(id))}>
+      <button className="remove-btn" onClick={() => handleItemRemove()}>
         <FontAwesomeIcon icon={faTrash} />
       </button>
     </div>
