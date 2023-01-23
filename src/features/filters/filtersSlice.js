@@ -65,6 +65,28 @@ export const filtersSlice = createSlice({
       state.filters.price = state.filters.maxPrice;
       state.filters.category = "all";
     },
+    sortProducts: (state, action) => {
+      state.sort = action.payload;
+      let tempProducts = [...state.filteredProducts];
+      if (state.sort === "price-lowest") {
+        tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+      }
+      if (state.sort === "price-highest") {
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      }
+      if (state.sort === "name-a") {
+        tempProducts = tempProducts.sort((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+      }
+      if (state.sort === "name-z") {
+        tempProducts = tempProducts.sort((a, b) =>
+          b.title.localeCompare(a.title)
+        );
+      }
+
+      state.filteredProducts = tempProducts;
+    },
   },
 });
 
@@ -75,6 +97,7 @@ export const {
   updateFilters,
   filterProducts,
   clearFilters,
+  sortProducts,
 } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
