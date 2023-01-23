@@ -114,6 +114,7 @@ h5 {
 a {
   text-decoration: none;
   letter-spacing: var(--letterSpacing);
+  color: inherit;
 }
 a,
 button {
@@ -191,6 +192,16 @@ hr {
 .title {
   text-align: center;
 }
+
+/* animations */
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* mixin */
 
 @mixin md-screen {
   @media (min-width: 768px) {

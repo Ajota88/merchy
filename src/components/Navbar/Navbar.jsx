@@ -36,7 +36,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <NavButtons mobile="mobile" />
+        <NavButtons mobile="mobile" handleClose={() => setIsOpen(false)} />
       </Modal>
     </nav>
   );

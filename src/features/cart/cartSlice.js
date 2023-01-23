@@ -10,7 +10,7 @@ const getLocalStorage = () => {
 };
 
 const initialState = {
-  cart: [],
+  cart: getLocalStorage(),
   totalItems: 0,
   totalAmount: 0,
 };
@@ -99,6 +99,7 @@ export const cartSlice = createSlice({
       console.log(totalAmount);
       state.totalAmount = totalAmount;
       state.totalItems = totalItems;
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
   },
 });

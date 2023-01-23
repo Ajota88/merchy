@@ -6,7 +6,6 @@ import {
   Checkout,
   Error,
   Home,
-  Loading,
   Products,
   SingleProduct,
 } from "./pages";
