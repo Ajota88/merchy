@@ -47,7 +47,7 @@ const SingleProduct = () => {
           </p>
 
           <hr />
-          <AddToCart product={singleProduct} />
+          <AddToCart product={product} />
         </section>
       </div>
     </div>

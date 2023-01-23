@@ -1,14 +1,14 @@
 import "./AmountButtons.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-const AmountButtons = () => {
+const AmountButtons = ({ increase, decrease, amount }) => {
   return (
     <div className="amount-container">
-      <button>
+      <button onClick={decrease}>
         <FontAwesomeIcon icon={faMinus} />
       </button>
-      <span>10</span>
-      <button>
+      <span>{amount}</span>
+      <button onClick={increase}>
         <FontAwesomeIcon icon={faPlus} />
       </button>
     </div>
