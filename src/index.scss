@@ -134,7 +134,7 @@ img {
 }
 
 hr {
-  width: 20rem;
+  min-width: 20rem;
   height: 1px;
   background-color: var(--clr-accent-500);
   border: none;

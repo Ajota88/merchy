@@ -47,9 +47,42 @@ export const cartSlice = createSlice({
         state.cart = [...state.cart, newItem];
       }
     },
+
+    toggleAmount: (state, action) => {
+      const { id, value } = action.payload;
+
+      let tempCart = state.cart.map((item) => {
+        if (item?.id === id) {
+          if (value === "inc") {
+            let newAmount = item?.amount + 1;
+            if (newAmount > 10) {
+              newAmount = 10;
+            }
+            return { ...item, amount: newAmount };
+          }
+
+          if (value === "dec") {
+            let newAmount = item.amount - 1;
+            if (newAmount < 1) {
+              newAmount = 1;
+            }
+            return { ...item, amount: newAmount };
+          }
+        } else {
+          return item;
+        }
+      });
+
+      state.cart = tempCart;
+    },
+
+    removeItem: (state, action) => {
+      console.log(action.payload);
+      state.cart = state.cart.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, toggleAmount, removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
