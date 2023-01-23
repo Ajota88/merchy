@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { GridView, ListView } from "../index";
-import { featured } from "../../utils/constants";
+import { filterProducts } from "../../features/filters/filtersSlice";
 import "./ProductsList.scss";
 
 const ProductsList = () => {
-  const { gridView, filteredProducts } = useSelector((state) => state.filters);
+  const {
+    gridView,
+    filteredProducts,
+    filters: { text, category, price },
+  } = useSelector((state) => state.filters);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(filterProducts());
+  }, [category, text, price]);
 
   if (gridView === false) {
     return <ListView products={filteredProducts} />;

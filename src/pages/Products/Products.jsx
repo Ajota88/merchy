@@ -19,7 +19,7 @@ const Products = () => {
     return <Spinner />;
   }
 
-  dispatch(loadProducts(products));
+  !isLoading && dispatch(loadProducts(products));
 
   return (
     <section className="products-page">

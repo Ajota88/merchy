@@ -25,12 +25,56 @@ export const filtersSlice = createSlice({
       state.gridView = false;
     },
     loadProducts: (state, action) => {
-      (state.filteredProducts = action.payload),
-        (state.allProducts = action.payload);
+      let maxPrice = action.payload.map((p) => p.price);
+      maxPrice = Math.max(...maxPrice);
+      console.log(maxPrice);
+      state.filters.maxPrice = maxPrice;
+      state.filters.price = maxPrice;
+      state.filteredProducts = action.payload;
+      state.allProducts = action.payload;
+    },
+    updateFilters: (state, action) => {
+      const { name, value } = action.payload;
+      state.filters = { ...state.filters, [name]: value };
+    },
+    filterProducts: (state) => {
+      const { allProducts } = state;
+      const { text, category, price } = state.filters;
+      let tempProducts = [...allProducts];
+
+      if (text) {
+        tempProducts = tempProducts.filter((product) =>
+          product.title.toLowerCase().startsWith(text)
+        );
+      }
+
+      if (category !== "all") {
+        tempProducts = tempProducts.filter(
+          (product) => product.category === category
+        );
+      }
+
+      if (price) {
+        tempProducts = tempProducts.filter((product) => product.price <= price);
+      }
+
+      state.filteredProducts = tempProducts;
+    },
+    clearFilters: (state) => {
+      state.filters.text = "";
+      state.filters.price = state.filters.maxPrice;
+      state.filters.category = "all";
     },
   },
 });
 
-export const { setGridView, setListView, loadProducts } = filtersSlice.actions;
+export const {
+  setGridView,
+  setListView,
+  loadProducts,
+  updateFilters,
+  filterProducts,
+  clearFilters,
+} = filtersSlice.actions;
 
 export default filtersSlice.reducer;
