@@ -5,13 +5,20 @@ import "normalize.css";
 import "./index.scss";
 import { store } from "./store";
 import { Provider } from "react-redux";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { apiSlice } from "./features/api/apiSlice";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Auth0Provider
+      domain={import.meta.env.VITE_AUTH_DOMAIN}
+      clientId={import.meta.env.VITE_AUTH_CLIENT}
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Auth0Provider>
   </React.StrictMode>
 );

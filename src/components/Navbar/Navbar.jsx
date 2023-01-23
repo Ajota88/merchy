@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log(import.meta.env.VITE_AUTH_CLIENT);
   return (
     <nav className="navbar">
       <div className="nav-left">
