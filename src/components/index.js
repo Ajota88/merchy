@@ -20,7 +20,7 @@ import Sort from "./Sort/Sort";
 import Stars from "./Stars/Stars";
 import Testimonials from "./Testimonials/Testimonials";
 import NavButtons from "./NavButtons/NavButtons";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "./Searchbar/Searchbar";
 import Spinner from "./Spinner/Spinner";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
