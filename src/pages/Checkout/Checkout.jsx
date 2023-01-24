@@ -21,11 +21,15 @@ const Checkout = () => {
     }
   }, [searchParams]);
 
+  const LOCAL_DOMAIN = "http://localhost:3000";
+  const PRODUCTION_DOMAIN = "https://merchy-store.vercel.app";
+
   const handleSubmit = async () => {
     try {
       const stripe = await stripePromise;
 
-      const res = await axios.post("http://localhost:3000/api/payment", {
+      const res = await axios.post(`${PRODUCTION_DOMAIN}/api/payment`, {
+        //for local testing use LOCAL_DOMAIN
         cart,
         totalAmount,
       });
