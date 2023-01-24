@@ -1,5 +1,5 @@
 import Stripe from "stripe";
-const stripe = new Stripe(import.meta.env.VITE_STRIPE_PRIVATE_KEY);
+const stripe = new Stripe(process.env.VITE_STRIPE_PRIVATE_KEY);
 const LOCAL_DOMAIN = "http://localhost:3000/checkout";
 const PRODUCTION_DOMAIN = "https://merchy-store.vercel.app/checkout";
 
