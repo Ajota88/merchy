@@ -27,7 +27,7 @@ export const filtersSlice = createSlice({
     loadProducts: (state, action) => {
       let maxPrice = action.payload.map((p) => p.price);
       maxPrice = Math.max(...maxPrice);
-      console.log(maxPrice);
+
       state.filters.maxPrice = maxPrice;
       state.filters.price = maxPrice;
       state.filteredProducts = action.payload;

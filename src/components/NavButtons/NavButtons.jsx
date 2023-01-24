@@ -13,8 +13,6 @@ const NavButtons = ({ handleOpen, handleClose, mobile }) => {
   const { totalItems } = useSelector((state) => state.cart);
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
-  console.log(user);
-
   return (
     <div className="nav-buttons" data-type={mobile}>
       {!user ? (

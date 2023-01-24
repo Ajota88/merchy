@@ -77,7 +77,6 @@ export const cartSlice = createSlice({
     },
 
     removeItem: (state, action) => {
-      console.log(action.payload);
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
 
@@ -96,7 +95,7 @@ export const cartSlice = createSlice({
         },
         { totalItems: 0, totalAmount: 0 }
       );
-      console.log(totalAmount);
+
       state.totalAmount = totalAmount;
       state.totalItems = totalItems;
       localStorage.setItem("cart", JSON.stringify(state.cart));

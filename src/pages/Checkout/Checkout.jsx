@@ -8,7 +8,7 @@ import "./Checkout.scss";
 
 const Checkout = () => {
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-  console.log(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const Checkout = () => {
       });
 
       const body = await res.data;
-      console.log(body);
+
       window.location.href = body.url;
     } catch (error) {
       console.log(error);
