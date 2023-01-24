@@ -4,7 +4,7 @@ const initialState = {
   filteredProducts: [],
   allProducts: [],
   gridView: true,
-  sort: "price-lowest",
+  sort: "default",
   filters: {
     text: "",
     category: "all",
@@ -44,7 +44,7 @@ export const filtersSlice = createSlice({
 
       if (text) {
         tempProducts = tempProducts.filter((product) =>
-          product.title.toLowerCase().startsWith(text)
+          product.title.toLowerCase().startsWith(text.toLocaleLowerCase())
         );
       }
 

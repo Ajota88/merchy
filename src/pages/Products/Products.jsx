@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
 import { Sort, Filters, ProductsList, Spinner } from "../../components";
@@ -15,11 +16,13 @@ const Products = () => {
     error,
   } = useGetProductsQuery();
 
+  useEffect(() => {
+    !isLoading && dispatch(loadProducts(products));
+  }, [products]);
+
   if (isLoading) {
     return <Spinner />;
   }
-
-  !isLoading && dispatch(loadProducts(products));
 
   return (
     <section className="products-page">
