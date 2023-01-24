@@ -1,0 +1,26 @@
+.checkout {
+  background-color: var(--clr-neutral-100);
+  .container {
+    padding-inline: 2rem;
+  }
+  h2,
+  h4,
+  p {
+    margin-bottom: 2rem;
+  }
+
+  h4,
+  span {
+    color: var(--clr-accent-500);
+  }
+
+  h4 {
+    text-transform: none;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+
+  min-height: 80vh;
+}

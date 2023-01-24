@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer, PrivateRoute } from "./components";
+import { Navbar, Footer, ProtectedRoute } from "./components";
 import {
   About,
   Cart,
@@ -50,9 +50,9 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: (
-          <PrivateRoute>
+          <ProtectedRoute>
             <Checkout />,
-          </PrivateRoute>
+          </ProtectedRoute>
         ),
       },
     ],

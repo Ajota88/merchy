@@ -1,33 +1,12 @@
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
+import { useSelector } from "react-redux";
 import "./CartTotals.scss";
 
 const CartTotals = () => {
-  const stripePromise = loadStripe(
-    "pk_test_51MQKyHFnhpVEKYs6jBvfwZrkd5CtmF13FVvU7Uz7XFy3M56tKDfsnX3Aqk1Lyl7QeES4nQQyOm1GLXvUENABtY0J00lBgFKRoe"
-  );
-
-  const handleSubmit = async () => {
-    try {
-      const stripe = await stripePromise;
-
-      const res = await axios.post("http://localhost:3000/api/payment", {
-        cart,
-        totalAmount,
-      });
-
-      const body = await res.data;
-      console.log(body);
-      window.location.href = body.url;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const { totalAmount, cart } = useSelector((state) => state.cart);
   const { user, loginWithRedirect } = useAuth0();
+  const { totalAmount, cart } = useSelector((state) => state.cart);
+
   return (
     <div className="cart-total">
       <div>
@@ -37,9 +16,9 @@ const CartTotals = () => {
           </h4>
         </article>
         {user ? (
-          <button className="btn" onClick={handleSubmit}>
+          <Link to="/checkout" className="btn">
             proceed to checkout
-          </button>
+          </Link>
         ) : (
           <button className="btn" onClick={loginWithRedirect}>
             Login
