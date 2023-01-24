@@ -22,10 +22,7 @@ const NavButtons = ({ handleOpen, handleClose, mobile }) => {
           <FontAwesomeIcon icon={faUser} /> <span>Login</span>
         </button>
       ) : (
-        <button
-          className="nav-login"
-          onClick={() => logout({ returnTo: window.location.origin })}
-        >
+        <button className="nav-login" onClick={logout}>
           <FontAwesomeIcon icon={faUser} /> <span>Logout</span>
         </button>
       )}

@@ -7,10 +7,8 @@ import axios from "axios";
 import "./Checkout.scss";
 
 const Checkout = () => {
-  const stripePromise = loadStripe(
-    "pk_test_51MQKyHFnhpVEKYs6jBvfwZrkd5CtmF13FVvU7Uz7XFy3M56tKDfsnX3Aqk1Lyl7QeES4nQQyOm1GLXvUENABtY0J00lBgFKRoe"
-  );
-
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+  console.log(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -57,6 +55,19 @@ const Checkout = () => {
           </h4>
           <Link to="/products" className="btn">
             CONTINUE SHOPPING
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (cart.length === 0) {
+    return (
+      <div className="page-100">
+        <div className="empty">
+          <h2>Your Cart is empty</h2>
+          <Link to="/products" className="btn">
+            fill your cart
           </Link>
         </div>
       </div>

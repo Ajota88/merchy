@@ -4,10 +4,12 @@ import "./Navbar.scss";
 import logo from "../../assets/logo-no-background.svg";
 import { navLinks } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(import.meta.env.VITE_AUTH_CLIENT);
+  const { user } = useAuth0();
+  console.log(user);
   return (
     <nav className="navbar">
       <div className="nav-left">
@@ -22,6 +24,11 @@ const Navbar = () => {
               <Link to={link.url}>{link.text}</Link>
             </li>
           ))}
+          {user && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className="nav-right">
@@ -35,6 +42,11 @@ const Navbar = () => {
               <Link to={link.url}>{link.text}</Link>
             </li>
           ))}
+          {user && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
         </ul>
         <NavButtons mobile="mobile" handleClose={() => setIsOpen(false)} />
       </Modal>
